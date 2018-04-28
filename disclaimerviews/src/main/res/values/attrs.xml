@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GlobalAttrDeclare">
+        <attr name="pv_title" format="string"/>
+        <attr name="pv_body" format="string"/>
+        <attr name="pv_negative_button_text" format="string"/>
+        <attr name="pv_positive_button_text" format="string"/>
+        <attr name="pv_toggle_on_text" format="string"/>
+        <attr name="pv_toggle_off_text" format="string"/>
+        <attr name="pv_skip_button_text" format="string"/>
+        <attr name="pv_continue_button_text" format="string"/>
+        <attr name="pv_interaction_enabled" format="boolean"/>
+        <attr name="pv_indicator_enabled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="DecisionView">
+        <attr name="pv_title"/>
+        <attr name="pv_body"/>
+        <attr name="pv_negative_button_text"/>
+        <attr name="pv_positive_button_text"/>
+        <attr name="pv_interaction_enabled"/>
+        <attr name="pv_indicator_enabled"/>
+    </declare-styleable>
+    <declare-styleable name="ToggleView">
+        <attr name="pv_title"/>
+        <attr name="pv_body"/>
+        <attr name="pv_toggle_on_text"/>
+        <attr name="pv_toggle_off_text"/>
+        <attr name="pv_skip_button_text"/>
+        <attr name="pv_continue_button_text"/>
+        <attr name="pv_interaction_enabled"/>
+        <attr name="pv_indicator_enabled"/>
+    </declare-styleable>
+</resources>

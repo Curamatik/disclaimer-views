@@ -1,0 +1,13 @@
+<resources>
+    <string name="disclaimer_view_positive_button_default">Akzeptieren</string>
+    <string name="disclaimer_view_negative_button_default">Ablehnen</string>
+    <string name="toggle_view_skip_button_default">Überspringen</string>
+    <string name="toggle_view_continue_button_default">Weiter</string>
+    <string name="disclaimer_view_toggle_off_default">Daten werden &lt;b>nicht versendet.&lt;/b>&lt;br />Tap hier um den
+        Versand
+        zu aktivieren.
+    </string>
+    <string name="disclaimer_view_toggle_on_default">Daten werden &lt;b>versendet.&lt;/b>&lt;br />Tap hier um den Versand
+        zu deaktiveren.
+    </string>
+</resources>

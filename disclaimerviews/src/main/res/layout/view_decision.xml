@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       tools:layout_height="match_parent"
+       tools:layout_width="match_parent"
+       tools:parentTag="android.support.constraint.ConstraintLayout"
+    >
+
+    <de.curamatik.library.disclaimerviews.util.BottomAwareScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/divider_toggle_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/end_of_disclaimer_padding"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="24dp"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="@tools:sample/lorem"
+                />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="@tools:sample/lorem/random"
+
+                />
+        </LinearLayout>
+    </de.curamatik.library.disclaimerviews.util.BottomAwareScrollView>
+
+    <View
+        android:id="@+id/scroll_indicator_background"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/gradient_scroll_indicator"
+        app:layout_constraintBottom_toTopOf="@+id/divider_toggle_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/scroll_indicator_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.24"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_indicator_background"
+        app:layout_constraintEnd_toEndOf="@+id/scroll_indicator_background"
+        app:layout_constraintStart_toStartOf="@+id/scroll_indicator_background"
+        app:layout_constraintTop_toTopOf="@+id/scroll_indicator_background"
+        app:srcCompat="@drawable/ic_scroll_indicator"
+        />
+
+    <View
+        android:id="@+id/divider_toggle_bottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/disclaimer_view_divider_color"
+        app:layout_constraintBottom_toTopOf="@+id/nav_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/nav_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="negative_button, positive_button"
+        />
+
+    <Button
+        android:id="@+id/negative_button"
+        style="@style/BottomControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="24dp"
+        android:minWidth="@dimen/disclaimer_view_min_button_width"
+        android:text="@string/disclaimer_view_negative_button_default"
+        android:theme="@style/PrimaryColorRaisedButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/positive_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginTop="8dp"
+        />
+
+    <Button
+        android:id="@+id/positive_button"
+        style="@style/BottomControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="12dp"
+        android:minWidth="@dimen/disclaimer_view_min_button_width"
+        android:text="@string/disclaimer_view_positive_button_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/negative_button"
+        app:layout_goneMarginTop="8dp"
+        tools:text="Akzeptieren"
+        />
+</merge>

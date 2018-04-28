@@ -1,0 +1,32 @@
+ext.projectVersionName = {
+    return "git -C ${rootDir} describe --tags --long".execute().text.trim()
+}
+
+ext.projectVersionCode = {
+    def versionMatcher = ext.projectVersionName() =~ /^[^0-9]*([^-]*)-?([|a-zA-Z]*)([0-9]*)?/
+    def versionToken = versionMatcher[0][1].tokenize('.')
+
+    def versionMajor = versionToken[0]
+    def versionMinor = versionToken[1]
+    def versionPatch = versionToken[2]
+    def testSubfix = 999
+    def testPrefix
+
+    if (versionMatcher[0][2] != "") {
+        testSubfix = versionMatcher[0][3]
+        testPrefix = versionMatcher[0][2]
+
+        printf(testPrefix)
+        if (testPrefix == "RC") {
+            testSubfix = testSubfix.toInteger() + 500
+        }
+        if (testPrefix == "beta") {
+            testSubfix = testSubfix.toInteger()
+        }
+    }
+
+    return versionMajor.toInteger() * 10000000 +
+            versionMinor.toInteger() * 100000 +
+            versionPatch.toInteger() * 1000 +
+            testSubfix.toInteger()
+}

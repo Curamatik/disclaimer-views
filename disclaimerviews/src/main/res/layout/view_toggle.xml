@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:animateLayoutChanges="true"
+       tools:layout_height="match_parent"
+       tools:layout_width="match_parent"
+       tools:parentTag="android.support.constraint.ConstraintLayout"
+    >
+
+    <de.curamatik.library.disclaimerviews.util.BottomAwareScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/divider_toggle_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/end_of_disclaimer_padding"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="24dp"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="@tools:sample/lorem"
+                />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="@tools:sample/lorem/random"
+
+                />
+        </LinearLayout>
+    </de.curamatik.library.disclaimerviews.util.BottomAwareScrollView>
+
+    <View
+        android:id="@+id/scroll_indicator_background"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/gradient_scroll_indicator"
+        app:layout_constraintBottom_toTopOf="@+id/divider_toggle_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/scroll_indicator_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.24"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_indicator_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scroll_indicator_background"
+        app:srcCompat="@drawable/ic_scroll_indicator"
+        />
+
+    <View
+        android:id="@+id/divider_toggle_top"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/disclaimer_view_divider_color"
+        app:layout_constraintBottom_toTopOf="@id/toggle_click_overlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Switch
+        android:id="@+id/toggle_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="8dp"
+        android:paddingStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toggle_click_overlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toggle_click_overlay"
+        />
+
+    <TextView
+        android:id="@+id/toggle_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="64dp"
+        android:minLines="2"
+        android:padding="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="8dp"
+        android:text="@string/disclaimer_view_toggle_off_default"
+        app:layout_constraintBottom_toBottomOf="@+id/divider_toggle_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toggle_control"
+        />
+
+    <View
+        android:id="@+id/toggle_click_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/divider_toggle_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toggle_text"
+        />
+
+    <View
+        android:id="@+id/divider_toggle_bottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/disclaimer_view_divider_color"
+        app:layout_constraintBottom_toTopOf="@+id/nav_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/nav_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="skip_button, continue_button"
+        />
+
+    <Button
+        android:id="@+id/skip_button"
+        style="@style/BottomControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/disclaimer_view_min_button_width"
+        android:text="@string/toggle_view_skip_button_default"
+        android:theme="@style/PrimaryColorRaisedButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/continue_button"
+        style="@style/BottomControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/disclaimer_view_min_button_width"
+        android:text="@string/toggle_view_continue_button_default"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+</merge>

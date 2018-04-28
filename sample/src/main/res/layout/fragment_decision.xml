@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:id="@+id/constraintLayout"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+    >
+
+    <de.curamatik.library.disclaimerviews.DecisionView
+        android:id="@+id/decision_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:pv_body="@string/decision_view_sample_lorem_ipsum"
+        app:pv_indicator_enabled="true"
+        app:pv_interaction_enabled="true"
+        app:pv_negative_button_text="@string/decision_view_sample_negative_button"
+        app:pv_positive_button_text="@string/decision_view_sample_positive_button"
+        app:pv_title="@string/decision_view_sample_title"
+        />
+
+</android.support.constraint.ConstraintLayout>
