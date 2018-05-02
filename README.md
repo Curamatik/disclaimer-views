@@ -34,7 +34,7 @@ Add dependency to build.gradle
 
 ```
 dependencies {
-    implementation "de.curamatik.library:disclaimerviews:[latest-version]"
+    implementation "com.github.curamatik:disclaimer-views:[latest-version]"
 }
 ```
 
