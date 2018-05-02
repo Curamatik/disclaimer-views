@@ -1,6 +1,7 @@
 
 [![Release](https://jitpack.io/v/curamatik/disclaimer-views.svg)](https://jitpack.io/#curamatik/disclaimer-views)
 
+
 ![Curamatik Logo](img/curamatik_logo.png)
 # Disclaimer Views
 
