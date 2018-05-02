@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply from: '../config/version.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
 
+group = 'com.github.curamatik'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion

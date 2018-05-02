@@ -10,5 +10,7 @@
     <string name="decision_view_sample_negative_button_toast">Negative Button pressed</string>
     <string name="decision_view_sample_skip_button_toast">Skip button pressed</string>
     <string name="decision_view_sample_continue_button_toast">Continue button pressed</string>
+    <string name="decision_view_sample_toggle_on_text">Continue Button</string>
+    <string name="decision_view_sample_toggle_off_text">Skip Button</string>
 
 </resources>
