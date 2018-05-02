@@ -16,6 +16,8 @@
         app:pv_interaction_enabled="true"
         app:pv_skip_button_text="@string/decision_view_sample_skip_button"
         app:pv_title="@string/decision_view_sample_title"
+        app:pv_toggle_on_text="@string/decision_view_sample_toggle_on_text"
+        app:pv_toggle_off_text="@string/decision_view_sample_toggle_off_text"
         />
 
 </android.support.constraint.ConstraintLayout>
