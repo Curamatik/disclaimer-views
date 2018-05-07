@@ -64,7 +64,7 @@ __pv_title__ [String]
 Title text, when the title is not set, the textViews visibility is set GONE.
 
 __pv_body__ [String]  
-Body text to be shown below the title.
+Body text to be shown below the title. __This text is interpreted as HTML!__
 
 __pv_negative_button_text__ [String]  
 The text of the left button.
@@ -113,7 +113,7 @@ __pv_title__ [String]
 Title text, when the title is not set, the textViews visibility is set GONE.
 
 __pv_body__ [String]  
-Body text to be shown below the title.
+Body text to be shown below the title. __This text is interpreted as HTML!__
 
 __pv_continue_button_text__ [String]  
 The text of the continue button, shown when the toggle is ON.
