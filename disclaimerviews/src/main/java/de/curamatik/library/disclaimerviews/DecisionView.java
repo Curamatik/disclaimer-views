@@ -2,8 +2,11 @@ package de.curamatik.library.disclaimerviews;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.text.Html;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +79,11 @@ public class DecisionView extends ConstraintLayout {
      */
     public void setDisclaimerBody(@Nullable String disclaimerBody) {
         TextView bodyView = findViewById(R.id.body);
-        bodyView.setText(disclaimerBody);
+        if (disclaimerBody != null) {
+            setHtmlText(bodyView, disclaimerBody);
+        } else {
+            bodyView.setText(null);
+        }
     }
 
     /**
@@ -138,6 +145,14 @@ public class DecisionView extends ConstraintLayout {
         } else {
             scrollIndicator.setVisibility(INVISIBLE);
             scrollIndicatorBackground.setVisibility(INVISIBLE);
+        }
+    }
+
+    private void setHtmlText(@NonNull TextView toggleText, @NonNull String text) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            toggleText.setText(Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            toggleText.setText(Html.fromHtml(text));
         }
     }
 

@@ -119,7 +119,11 @@ public class ToggleView extends ConstraintLayout {
      */
     public void setDisclaimerBody(@Nullable String disclaimerBody) {
         TextView bodyView = findViewById(R.id.body);
-        bodyView.setText(disclaimerBody);
+        if (disclaimerBody != null) {
+            setHtmlText(bodyView, disclaimerBody);
+        } else {
+            bodyView.setText(null);
+        }
     }
 
     /**
